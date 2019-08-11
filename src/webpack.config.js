@@ -120,7 +120,10 @@ module.exports = ignoreWarmupPlugin({
     symlinks: false,
     // First start by looking for modules in the plugin's node_modules
     // before looking inside the project's node_modules.
-    modules: [path.resolve(__dirname, "node_modules"), "node_modules"]
+    modules: [path.resolve(__dirname, "node_modules"), "node_modules"],
+    alias: {
+      'pg-native': path.join(__dirname, 'aliases/pgnative.js'),
+    },
   },
   // Add loaders
   module: loaders(),
